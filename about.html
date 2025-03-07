@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About - A Professional in Technology and Innovation">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f5e9e2;    /* Soft cream background */
+            --secondary: #8ab6d6;  /* Muted blue for accents */
+            --accent: #d4a5a5;     /* Subtle pink for highlights */
+            --text: #4a5759;       /* Soft charcoal text */
+            --card-bg: #ffffff;    /* Clean white cards */
+            --shadow: 0 8px 25px rgba(138, 182, 214, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, #e8f0f2 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(138, 182, 214, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        #about {
+            max-width: 1200px;
+            margin: 120px auto 0;
+            padding: 3rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid, .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skill-card, .achievement-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(138, 182, 214, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .skill-card:hover, .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card h3, .achievement-card p:first-child {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-card p, .achievement-card small {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--text);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(138, 182, 214, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            #about {
+                padding: 2rem 1.5rem;
+                margin-top: 100px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .skills-grid, .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Who Am I?</h2>
+        <p>I’m a passionate professional with a strong focus on technology and innovation, currently pursuing advanced studies in a technical field. My work blends creativity and analytical thinking to develop solutions that address modern challenges. With a foundation in coding and a keen interest in emerging technologies, I strive to push boundaries and deliver impactful results.</p>
+
+        <h2>Key Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-code"></i> Programming</h3>
+                <p>Multiple languages and frameworks</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
+                <p>Advanced tools and techniques</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-brain"></i> Data Analysis</h3>
+                <p>Processing and modeling</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                <p>Frontend and backend expertise</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-database"></i> Databases</h3>
+                <p>Data management systems</p>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-tools"></i> Tools</h3>
+                <p>Development and collaboration tools</p>
+            </div>
+        </div>
+
+        <h2>My Vision</h2>
+        <p>I aim to contribute to technological advancements that solve real-world problems and promote accessibility and ethics in innovation.</p>
+
+        <h2>Work & Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <p><i class="fas fa-trophy"></i> Hackathon </p>
+                <small>Recognized for an innovative project</small>
+            </div>
+            <div class="achievement-card">
+                <p><i class="fas fa-lock"></i> Research Work</p>
+                <small>Contributed to a technical study</small>
+            </div>
+            <div class="achievement-card">
+                <p><i class="fas fa-rocket"></i> Project Development</p>
+                <small>Built impactful tech solutions</small>
+            </div>
+
+        </div>
+
+        <h2>Let’s Connect</h2>
+        <p>I’m open to collaboration and discussions on technology and innovation. Feel free to get in touch!</p>
+        <div class="social-links">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:example@email.com">example@email.com</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('#about > *').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Subtle parallax on header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollPos = window.scrollY;
+            header.style.transform = `translateY(${scrollPos * 0.15}px)`;
+        });
+    </script>
+</body>
+</html>
